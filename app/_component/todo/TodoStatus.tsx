@@ -12,7 +12,7 @@ const TodoStatus = ({todo}:{todo:TodoItem}) => {
         setIsLoading(true)
         event.preventDefault()
 
-        await fetch('http://full-stack-next-js-todo-prisma.vercel.app/api/todo/'+todo.id,{
+        await fetch('https://full-stack-next-js-todo-prisma.vercel.app/api/todo/'+todo.id,{
           method:'PUT',
           body:JSON.stringify({text:todo.text,isDone:!todo.isDone,userId:todo.userId})
         }).then((res)=>{
