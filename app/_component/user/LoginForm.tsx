@@ -25,7 +25,7 @@ function LoginForm (){
             password:formData.get("password")
         }
 
-        await fetch(API_URL+'/user/login',{
+        await fetch('full-stack-next-js-todo-prisma.vercel.app/api/user/login',{
             method:"POST",
             body:JSON.stringify(userData)
         }).then(async(res)=>{

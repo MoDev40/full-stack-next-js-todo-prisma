@@ -26,7 +26,7 @@ export function UpdateTodoDialog({todo}:{todo:TodoItem}) {
         setIsLoading(true)
         event.preventDefault()
 
-        await fetch(API_URL+'/todo/'+todo.id,{
+        await fetch('full-stack-next-js-todo-prisma.vercel.app/api/todo/'+todo.id,{
           method:'PUT',
           body:JSON.stringify(userData)
         }).then((res)=>{
