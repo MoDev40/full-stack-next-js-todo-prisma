@@ -1,5 +1,5 @@
 import {NextRequest,NextResponse} from "next/server"
-import prisma from "@/prisma/client"
+import prisma from "@/lib/client"
 import {Todo} from "../route"
 
 type Params = {

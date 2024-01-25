@@ -1,7 +1,7 @@
 import { NextResponse,NextRequest } from "next/server";
 import { User } from "../signup/route";
 import bcrypt from "bcrypt"
-import prisma from "@/prisma/client";
+import prisma from "@/lib/client";
 import jwt from 'jsonwebtoken'
 import { sekret } from "@/lib/config";
 

@@ -1,6 +1,6 @@
 import { NextResponse,NextRequest } from "next/server";
 import bcrypt from "bcrypt"
-import prisma from "@/prisma/client";
+import prisma from "@/lib/client";
 
 export async function GET(req:NextRequest){
     return NextResponse.json("We are Here signup")
