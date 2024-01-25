@@ -31,7 +31,7 @@ export function TodoFormDialog() {
             isDone:false,
             userId:userId
         }
-        await fetch('http://full-stack-next-js-todo-prisma.vercel.app/api/todo',{
+        await fetch('https://full-stack-next-js-todo-prisma.vercel.app/api/todo',{
           method:'POST',
           body:JSON.stringify(userData)
         }).then((res)=>{
