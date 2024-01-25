@@ -13,7 +13,7 @@ const DeleteTodo = ({todo}:{todo:TodoItem}) => {
         setIsLoading(true)
         event.preventDefault()
 
-        await fetch('full-stack-next-js-todo-prisma.vercel.app/api/todo/'+todo.id,{
+        await fetch('http://full-stack-next-js-todo-prisma.vercel.app/api/todo/'+todo.id,{
           method:'DELETE',
         }).then(async(res)=>{
           if(!res.ok){

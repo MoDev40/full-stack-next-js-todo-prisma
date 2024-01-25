@@ -13,7 +13,7 @@ interface ResponseData {
 }
 const Todos = async()=>{ 
 
-    const res = await fetch('full-stack-next-js-todo-prisma.vercel.app/api/todo',{cache:"no-cache"})
+    const res = await fetch('http://full-stack-next-js-todo-prisma.vercel.app/api/todo',{cache:"no-cache"})
     const {todos} : ResponseData  = await res.json()
         
     return(
