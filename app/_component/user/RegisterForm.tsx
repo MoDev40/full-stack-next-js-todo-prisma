@@ -26,7 +26,7 @@ function RegisterForm (){
             body:JSON.stringify(userData)
         }).then((res)=>{
             if(!res.ok){
-                infoToast("Error try again")
+                infoToast("Error try again for registeration")
                 return
             }
             successToast("Registred success")
