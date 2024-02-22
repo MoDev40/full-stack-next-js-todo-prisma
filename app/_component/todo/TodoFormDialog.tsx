@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { API_URL } from "@/lib/config"
 import { infoToast, successToast } from "@/lib/toast"
 import { useRouter } from "next/navigation"
 import React, { useState } from "react"
@@ -31,7 +30,7 @@ export function TodoFormDialog() {
             isDone:false,
             userId:userId
         }
-        await fetch('https://full-stack-next-js-todo-prisma.vercel.app/api/todo',{
+        await fetch('/api/todo',{
           method:'POST',
           body:JSON.stringify(userData)
         }).then((res)=>{

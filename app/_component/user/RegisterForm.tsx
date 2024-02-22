@@ -21,7 +21,7 @@ function RegisterForm (){
             username:formData.get("username"),
             password:formData.get("password")
         }
-        await fetch('https://full-stack-next-js-todo-prisma.vercel.app/api/user/signup',{
+        await fetch('/api/user/signup',{
             method:"POST",
             body:JSON.stringify(userData)
         }).then((res)=>{

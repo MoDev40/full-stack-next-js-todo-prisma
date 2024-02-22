@@ -1,7 +1,6 @@
 import { Todo } from "@/app/api/todo/route"
-
+import React from 'react'
 import TodoTable from "./TodoTable"
-import { API_URL } from "@/lib/config"
   
 export interface TodoItem extends Todo {
     id:number,
@@ -9,16 +8,20 @@ export interface TodoItem extends Todo {
 }
 
 interface ResponseData {
-    todos:TodoItem[],
+  todos:TodoItem[];
 }
-const Todos = async()=>{ 
 
-    const res = await fetch('https://full-stack-next-js-todo-prisma.vercel.app/api/todo',{cache:"no-cache"})
-    const {todos} : ResponseData  = await res.json()
-        
-    return(
-        <TodoTable todos={todos} />
-    )
+const todosData : () => Promise<ResponseData> = async()=>{
+  const res = await fetch('/api/todo',{cache:"no-cache"})
+  return await res.json()
+}
+
+const Todos = async() => {
+  const {todos} = await todosData()
+  console.log(todos);
+  return (
+    <TodoTable todos={todos}/>
+  )
 }
 
 export default Todos

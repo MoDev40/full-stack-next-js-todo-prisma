@@ -14,7 +14,7 @@ import { useRouter } from "next/navigation"
 import React, {  useState } from "react"
 import { TodoItem } from "./Todos"
 import { infoToast, successToast } from "@/lib/toast"
-import { API_URL } from "@/lib/config"
+import { Edit } from "lucide-react"
 
 export function UpdateTodoDialog({todo}:{todo:TodoItem}) {
     const [isLoading,setIsLoading] = useState(false)
@@ -26,7 +26,7 @@ export function UpdateTodoDialog({todo}:{todo:TodoItem}) {
         setIsLoading(true)
         event.preventDefault()
 
-        await fetch('https://full-stack-next-js-todo-prisma.vercel.app/api/todo/'+todo.id,{
+        await fetch('/api/todo/'+todo.id,{
           method:'PUT',
           body:JSON.stringify(userData)
         }).then((res)=>{
@@ -44,7 +44,7 @@ export function UpdateTodoDialog({todo}:{todo:TodoItem}) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="rounded-none bg-yellow-400">Update</Button>
+        <Button className="rounded-none bg-yellow-400"><Edit/></Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader className="p-2 space-y-2">

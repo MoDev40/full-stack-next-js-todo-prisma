@@ -8,7 +8,6 @@ import React, { useState } from 'react'
 import { useUserContext } from '@/app/context/userContext'
 import * as Cookies from "js-cookie"
 import { infoToast, successToast } from '@/lib/toast'
-import { API_URL } from '@/lib/config'
 
 function LoginForm (){
     const [isLoading,setIsLoading] = useState(false)
@@ -25,7 +24,7 @@ function LoginForm (){
             password:formData.get("password")
         }
 
-        await fetch('https://full-stack-next-js-todo-prisma.vercel.app/api/user/login',{
+        await fetch('/api/user/login',{
             method:"POST",
             body:JSON.stringify(userData)
         }).then(async(res)=>{
