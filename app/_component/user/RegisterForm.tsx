@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button'
 import React, { useState } from "react"
 import { useRouter } from 'next/navigation'
 import { infoToast, successToast } from '@/lib/toast'
-import { API_URL } from '@/lib/config'
 
 function RegisterForm (){
     const [isLoading,setIsLoading] = useState(false)
